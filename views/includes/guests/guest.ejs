@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<% include ./../../partials/head %>
+
+  <body>
+    <% include ./../../navigation %>
+      <div class="container-fluid">
+        <h1 class="jumbotron-heading text-center">Hey there! Welcome.</h1>
+      </div>
+      <div class="album py-5">
+        <div class="container">
+          <div class="row">
+            <% if(books.length > 0) {for(var i=0; i<books.length; i++) {%>
+              <div class="col-md-3">
+                <div class="card mb-4 box-shadow">
+                  <a href="/guest/show/<%=books[i].id%>"><img class="card-img-top" src="<%= books[i].image_path%>" alt="Card image cap"></a>
+                  <div class="card-body">
+                    <h5 class="card-title"><%= books[i].title%></h5>
+                    <p class="card-text"><%=books[i].desc%></p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group" id="link-holder">
+                          <a href="/guest/show/<%=books[i].id%>"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
+                      </div>
+                      <small class="text-muted"> $<%= books[i].price%></small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <% } } else { %>
+              <div class="col-md-12">
+              <div class="text-center mx-auto">
+                  <h1> No books available! </h1>
+              </div></div>
+              <% } %>
+          </div>
+        </div>
+      </div>
+      <% include ./../../partials/script_includes %>
+  </body>
+
+</html>

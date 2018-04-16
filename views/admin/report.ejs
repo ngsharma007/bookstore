@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            input[type="button"]{
+                position: absolute;
+                top: 112px;
+                right: 175px;
+            }
+        </style>
+    </head>
+<% include ./../partials/head %>
+    <body>
+        <% include ./../navigation %>
+            <div class="album py-5 report-gen" id="reportToPrint">
+                <div class="container rounded">
+                    <div class="row bg-white" >
+                        <div class="col-8 px-2">
+                            <div class="row">
+                                <div class="col-12 py-3">
+                                    <h1><strong>Title:</strong> <%=book.title%></h1>
+                                </div>
+                                <div class="col-12">
+                                    <h1><strong>Description:</strong> <%=book.desc%></h1>
+                                </div>
+                                <div class="col-12">
+                                    <h1><strong>Author:</strong> <%=book.author%></h1>
+                                </div>
+                                <div class="col-12">
+                                    <h1><strong>ISBN:</strong> <%=book.isbn%></h1>
+                                </div>
+                                <div class="col-12">
+                                    <h1><strong>Edition:</strong> <%=book.edition%></h1>
+                                </div>
+                                <div class="col-12">
+                                    <h1><strong>Publisher:</strong> <%=book.publisher%></h1>
+                                </div>
+                                <div class="col-12">
+                                    <h1><strong>Category:</strong> <%=book.category%></h1>
+                                </div>
+                                <div class="col-12">
+                                    <h1><strong>Price:</strong> $<%=book.price%></h1>
+                                </div>
+                                <div class="col-12">
+                                    <h1><strong>Total No. of Books sold:</strong> <%=book.total_number_of_books_bought%> Books</h1>
+                                </div>
+                                <div class="col-12">
+                                    <h1><strong>Total No. of Times added to Cart:</strong> <%=book.fav_count%> Books</h1>
+                                </div>
+                                <div class="col-12">
+                                    <h1><strong>No. of Times book viewed:</strong> <%=book.no_of_views%> Views</h1>
+                                </div>
+                                <div class="col-12">
+                                    <h1><strong>No. of Books available in store:</strong> <%=book.total_number_of_books%> Books</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 p-2">
+                            <img src="<%=book.image_path%>" class="p-2 rounded bg-dark img-responsive float-right">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input type="button" class="btn btn-danger px-5 py-3 rounded-0" onclick="printReport('reportToPrint')" value="Print"/>
+            <% include ./../partials/script_includes %>
+    </body>
+
+</html>

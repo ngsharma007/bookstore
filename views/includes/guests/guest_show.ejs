@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<% include ./../../partials/head %>
+
+    <body>
+        <% include ./../../navigation %>
+            <div class="album py-5">
+                <div class="container">
+                    <div class="row px-0">
+                        <!-- <div class="col-md-12"> -->
+                        <div class="col-md-3 px-0">
+                            <img class="card-img-top" style="height: 350px;" src="<%=book.image_path%>" alt="Card image cap">
+                        </div>
+                        <div class="col-md-9">
+                            <div class="pl-4 pt-2" style="width: 100%; height: 350px; background: #fff; border-radius: 5px;">
+                                <div class="row">
+                                    <div class="col-md-10">
+                                        <h3><%=book.title%></h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-10">
+                                        <p><%=book.desc%>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-10">
+                                        <h2>$<%=book.price%></h2>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-10">
+                                            Author: <em><span><%=book.author%></span></em>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-10">
+                                            Edition: <em><span><%=book.edition%></span></em>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-10">
+                                            ISBN: <em><span><%=book.isbn%></span></em>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="py-2 col-md-3">
+                                        <a class="nav-link" href="/login"> Login to Add to Cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% include ./../../partials/script_includes %>
+    </body>
+
+</html>

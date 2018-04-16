@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<% include ./../partials/head %>
+
+    <body>
+        <% include ./../navigation %>
+            <div class="album py-5">
+                <div class="container">
+                    <div class="row px-0">
+                        <!-- <div class="col-md-12"> -->
+                            <ol>
+                        <%if(locals.categories){for(var i=0; i < locals.categories.length; i++){%>
+                            <li><a href="/admin/checkbycat/<%=locals.categories[i].category%>"><%=locals.categories[i].category%></a> <span title="No. of books in this category" class="badge p-1 bg-dark text-white"><%=locals.category_books[locals.categories[i].category]%></span></li>
+                        <%}}%>
+                        <%if(locals.books){for(var i=0; i < locals.books.length; i++){%>
+                            <li><a href="/admin/show/<%=locals.books[i].id%>"><%=locals.books[i].title%></a> <span title="No. of books available" class="badge p-1 bg-dark text-white"><%=locals.books[i].total_number_of_books%></span></li>
+                        <%}}%>
+                        </ol>
+                </div>
+            </div>
+            <% include ./../partials/script_includes %>
+    </body>
+
+</html>

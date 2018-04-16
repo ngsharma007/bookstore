@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900');
+@page { size: auto;  margin: 5mm; }
+
+html, body {
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  color: #5a5a5a;
+  height: 100%;
+  font-family: 'Roboto';
+  font-weight: 500;
+}
+
+.navbar-brand {
+  font-family: 'Playfair Display';
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.card-img-top {
+    height: 20vw;
+    object-fit: contain;
+}
+
+.card-title {
+  font-weight:700;
+}
+
+body {
+  background-color: #f5f5f5;
+}
+
+/* signup/signin forms */
+
+.form-signup, .form-signin, .form-email-verify{
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.form-signup .form-control, .form-signin .form-control, .form-email-verify .form-control{
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signup .form-control:focus, .form-signin .form-control:focus {
+  z-index: 2;
+}
+
+#inputUsername {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.form-signup input[type="email"]{
+  border-radius: 0;
+}
+
+.form-signup #inputPassword{
+  border-radius: 0;
+}
+
+.form-signup #rinputPassword{
+  border-radius: 0;
+}
+
+.form-signup input[type="file"]{
+  border-radius: 0;
+}
+
+/* signin form specifics */
+.form-signin input[type="email"] {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  border-radius: 0;
+}
+
+button[type="submit"] {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+#link-holder button{
+  padding: 5px 10px;
+}
+
+
+#link-holder a:nth-child(1) button{
+  padding: 5px 10px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+#link-holder form input{
+  padding: 5px 12px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+#link-holder a:nth-child(2) button{
+  padding: 5px 12px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.jumbotron {
+  padding: 10px !important;
+  margin-bottom: 10px !important;
+}
+
+.searchform {
+  border-radius: 0px;
+}
+
+.show {
+  display: block;
+}
+
+.sorters{
+  padding: 3px 10px;
+  margin-bottom: 5px;
+  margin-left: 2px;
+  background: none;
+}
+
+#signup-form-holder {
+  position: relative;
+}
+
+#float-checkpass{
+  color: green;
+}
+
+##float-checkpass1{
+  color: red;
+}
+
+#float-checkpass, #float-checkpass1 {
+  position: absolute;
+  left: 315px;
+  top: 15px;
+}
+
+#checkbycat{
+  padding: 3px 5px;
+}
+
+ol{
+  padding: 0;
+}
+
+ol li {
+  padding: 0;
+  margin: 0;
+  font-size: 1.6em;
+}
+
+ol li a {
+  color: black;
+}
+
+.report-gen {
+  font-family: 'Playfair Display';
+}
+
+.report-gen .container {
+  box-shadow: 1px 1px 5px 1px rgba(10, 10, 10, .2);
+}

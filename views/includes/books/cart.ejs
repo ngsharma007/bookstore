@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<% include ./../../partials/head %>
+
+  <body>
+    <% include ./../../navigation %>
+      <div class="container-fluid">
+        <%if(books.length == 0){%>
+          <section class="text-center">
+            <h1 class="display-4 py-5">Your Cart is empty!</h1>
+          </section>
+          <%}else{%>
+            <section class="text-center">
+              <h1 class="jumbotron-heading">Books Cart</h1>
+              <p class="lead text-muted">Below are the list of Books available in your cart</p>
+            </section>
+            <%}%>
+      </div>
+      <%if(books.length > 0){%>
+      <div class="row">
+        <div class="col-11">
+          <a class="btn btn-success btn-lg float-right text-white mx-2" href="/">Shop More </a>
+          <a class="btn btn-warning btn-lg float-right text-dark" href="/cart/checkout">Checkout ($<%=cart_price%>)</a>
+        </div>
+      </div>
+      <%}%>
+      <div class="album py-5">
+        <div class="container">
+          <div class="row">
+            <% if(books.length > 0)for(var i=0; i<books.length; i++) {%>
+              <div class="col-md-3">
+                <div class="card mb-4 box-shadow">
+                  <a href="/book/show/<%=books[i].items._id%>">
+                    <img class="card-img-top" src="<%= books[i].items.image_path%>" alt="Card image cap">
+                  </a>
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      <%= books[i].items.title%>
+                    </h5>
+                    <p class="card-text"><%=books[i].items.desc%></p>
+                    <p class="card-text">                    By: <i><%=books[i].items.author%></i><br>
+                      ISBN: <i><%=books[i].items.isbn%></i><br>
+                      Category: <i><%=books[i].items.category%></i><br><br>
+                    </p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group" id="link-holder">
+                        <a href="/book/show/<%=books[i].items._id%>">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                        </a>
+                        <a onclick="removeFromCart()" href="/cart/remove/<%=books[i].items._id%>">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Remove - 1</button>
+                        </a>
+                      </div>
+                      <small class="text-muted">$<%= books[i].items.price%>
+                       </small>
+                    </div>
+                    <br>
+                    <span class="text-dark">In Cart: <%= books[i].total%></span>
+                  </div>
+                </div>
+              </div>
+              <% } %>
+          </div>
+        </div>
+      </div>
+      <% include ./../../partials/script_includes %>
+  </body>
+
+</html>

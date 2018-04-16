@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<% include ./../../partials/head %>
+
+  <body>
+    <% include ./../../navigation %>
+      <div class="container-fluid">
+        <section class="text-center">
+            <h1 class="jumbotron-heading" style="color: green;">Thank you for ordering!</h1>
+            <div style="font-size: 1.5em;"><strong>Your total is:</strong> $<%=cart_price%></div>
+        </section>
+      </div>
+      <% include ./../../partials/script_includes %>
+  </body>
+
+</html>

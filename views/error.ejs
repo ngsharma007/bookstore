@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<% include ./partials/head.ejs %>
+	<body>
+		<% include ./navigation %>
+			<div class="container">
+				<div class="text-center">
+                    <h1><%= locals.message %></h1>
+                    <h2><%= locals.error.status %></h2>
+                    <pre><%= locals.error.stack %></pre>
+				</div>
+			</div>
+			<% include ./partials/script_includes %>
+	</body>
+</html>

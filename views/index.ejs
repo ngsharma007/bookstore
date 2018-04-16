@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<% include partials/head %>
+
+  <body>
+    <% include navigation %>
+      <div class="album py-5">
+        <div class="container">
+          <div class="row">
+            <% if(books.length > 0){for(var i=0; i<books.length; i++) { if(books[i].total_number_of_books > 0) { %>
+              <div class="col-md-3">
+                <div class="card mb-4 box-shadow">
+                  <a href="/book/show/<%=books[i].id%>"><img class="card-img-top" src="<%= books[i].image_path%>" alt="Card image cap"></a>
+                  <div class="card-body">
+                    <h5 class="card-title"><%= books[i].title%></h5>
+                    <p class="card-text">
+                      <%=books[i].desc%>
+                    </p>
+                    By: <i><%=books[i].author%></i><br>
+                    Publisher: <i><%=books[i].publisher%></i><br>
+                    Edition: <i><%=books[i].edition%></i><br>
+                    ISBN: <i><%=books[i].isbn%></i><br>
+                    Category: <i><%=books[i].category%></i><br><br>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group" id="link-holder">
+                          <a href="/book/show/<%=books[i].id%>"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
+                          <form onsubmit="addToCart(event,'<%=books[i].id%>')">
+                            <input type="submit" class="btn btn-sm btn-outline-secondary" value="Add">
+                          </form>
+                      </div>
+                      <small class="text-muted"> $<%= books[i].price%></small>
+                    </div>
+                    <small class="text-muted">Remaining: <%= books[i].total_number_of_books%> Books</small>
+                  </div>
+                </div>
+              </div>
+              <% } }} else { %>
+                <div class="col-md-12">
+                <div class="text-center mx-auto">
+                    <h1> No books available! </h1>
+                </div></div>
+                <% } %>
+          </div>
+        </div>
+      </div>
+      <% include partials/script_includes %>
+  </body>
+
+</html>

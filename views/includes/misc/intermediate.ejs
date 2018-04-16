@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<% include ./../../partials/head.ejs %>
+
+    <body>
+        <% include ./../../navigation %>
+            <div class="container">
+                <div class="text-center py-5">
+                    <span class="<%=locals.class%>">
+                    </span>
+                    <h2 style="font-weight:700; margin-top: 10px;">
+                        <%=locals.message%>
+                    </h2>
+                </div>
+                <div class="text-center mx-auto" style="width: 100px;">
+					<% if(title == 'Error') {%>
+						<a class="nav-link" href="/signup">Sign up</a>
+					<%}%>
+                    <% if(title == 'Success'){%>
+						<a class="nav-link" href="/login">Log in</a>
+					<%}%>
+                    <% if(title == 'Wrong') {%>
+						<a class="nav-link" href="/signup">Sign up</a>
+					<%}%>
+                </div>
+            </div>
+            <% include ./../../partials/script_includes %>
+    </body>
+
+</html>
