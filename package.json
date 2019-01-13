@@ -2,8 +2,8 @@
 {
   "name": "store",
    "engines": {
-    "node": ">=50.9" // intentionally so big version number
-  },
+    "node": ">=50.9",
+  }
   "scripts": {
     "requirements-check": "babel-node check-version.js",
     "postinstall": "npm run requirements-check"
